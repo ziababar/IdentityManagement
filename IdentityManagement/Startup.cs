@@ -29,9 +29,27 @@ namespace IdentityManagement
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            // configure identity server with in-memory stores, keys, clients, and resources
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            // For Identity Server 4
+            services.AddIdentityServer()
+                .AddDeveloperSigningCredential();
+
+            services.AddMvcCore()
+                .AddAuthorization()
+                .AddJsonFormatters();
+
+            services.AddAuthentication("Bearer")
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = "http://localhost:5000";
+                    options.RequireHttpsMetadata = false;
+
+                    options.ApiName = "api1";
+                });
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
@@ -56,6 +74,8 @@ namespace IdentityManagement
             app.UseStaticFiles();
 
             app.UseAuthentication();
+
+            app.UseIdentityServer();
 
             app.UseMvc(routes =>
             {
