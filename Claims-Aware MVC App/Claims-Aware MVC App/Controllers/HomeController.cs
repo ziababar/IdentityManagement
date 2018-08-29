@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Threading;
 using System.Web.Mvc;
 
 namespace Claims_Aware_MVC_App.Controllers
@@ -10,6 +11,8 @@ namespace Claims_Aware_MVC_App.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.ClaimsIdentity = Thread.CurrentPrincipal.Identity;
+
             return View();
         }
 
