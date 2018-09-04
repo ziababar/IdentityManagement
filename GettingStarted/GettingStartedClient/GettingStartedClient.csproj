@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C5399BC3-10E3-4780-B833-A34F857A7E84}</ProjectGuid>
+    <ProjectGuid>{506EEC6F-875D-49D8-A750-2E69D5BA3EB7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>GettingStartedHost</RootNamespace>
-    <AssemblyName>GettingStartedHost</AssemblyName>
+    <RootNamespace>GettingStartedClient</RootNamespace>
+    <AssemblyName>GettingStartedClient</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,10 +51,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GettingStartedLib\GettingStartedLib.csproj">
-      <Project>{616b6822-72e6-4b87-bd4f-a1d0a3648724}</Project>
-      <Name>GettingStartedLib</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
