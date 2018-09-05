@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStartedLib", "GettingStartedLib\GettingStartedLib.csproj", "{616B6822-72E6-4B87-BD4F-A1D0A3648724}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStartedClient", "GettingStartedClient\GettingStartedClient.csproj", "{506EEC6F-875D-49D8-A750-2E69D5BA3EB7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{616B6822-72E6-4B87-BD4F-A1D0A3648724} = {616B6822-72E6-4B87-BD4F-A1D0A3648724}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStartedHost", "GettingStartedHost\GettingStartedHost.csproj", "{C5399BC3-10E3-4780-B833-A34F857A7E84}"
 EndProject
