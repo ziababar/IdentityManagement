@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using GettingStartedClient.ServiceReference1;
+using GettingStartedClient.ServiceReference2;
 
 namespace GettingStartedClient
 {
@@ -39,7 +39,7 @@ namespace GettingStartedClient
             Console.WriteLine("Divide({0},{1}) = {2}", value1, value2, result);
 
             //Step 3: Closing the client gracefully closes the connection and cleans up resources.  
-            client.Close();
+            //client.Close();
         }
     }
 }
